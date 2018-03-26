@@ -10,6 +10,13 @@ import android.graphics.Paint;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
+
+import com.example.joacim.spaceshooter.models.Background;
+import com.example.joacim.spaceshooter.models.Boss;
+import com.example.joacim.spaceshooter.models.Enemy;
+import com.example.joacim.spaceshooter.models.Items;
+import com.example.joacim.spaceshooter.models.Player;
+
 import java.util.ArrayList;
 
 

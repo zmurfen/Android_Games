@@ -1,8 +1,11 @@
-package com.example.joacim.spaceshooter;
+package com.example.joacim.spaceshooter.models;
 
 import android.content.Context;
 import android.graphics.BitmapFactory;
 import android.graphics.Rect;
+
+import com.example.joacim.spaceshooter.Constants;
+import com.example.joacim.spaceshooter.R;
 
 import java.util.ArrayList;
 

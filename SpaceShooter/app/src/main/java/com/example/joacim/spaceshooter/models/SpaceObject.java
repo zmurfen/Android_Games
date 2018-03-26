@@ -1,4 +1,4 @@
-package com.example.joacim.spaceshooter;
+package com.example.joacim.spaceshooter.models;
 
 import android.graphics.Bitmap;
 import android.graphics.Rect;

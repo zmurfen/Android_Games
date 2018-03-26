@@ -1,8 +1,11 @@
-package com.example.joacim.spaceshooter;
+package com.example.joacim.spaceshooter.models;
 
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+
+import com.example.joacim.spaceshooter.Constants;
+import com.example.joacim.spaceshooter.R;
 
 /**
  * Created by joacim on 2018-02-06.
@@ -13,7 +16,7 @@ public class Background extends SpaceObject {
 
     public Background(Context context, int posx) {
         setBitmap(BitmapFactory.decodeResource(context.getResources(), R.drawable.background));
-        Bitmap scaledBitmap = Bitmap.createScaledBitmap(getBitmap(),Constants.SCREEN_WIDTH,Constants.SCREEN_HEIGHT,true);
+        Bitmap scaledBitmap = Bitmap.createScaledBitmap(getBitmap(), Constants.SCREEN_WIDTH,Constants.SCREEN_HEIGHT,true);
         setBitmap(scaledBitmap);
         setPosX(posx);
         setPosY(0);

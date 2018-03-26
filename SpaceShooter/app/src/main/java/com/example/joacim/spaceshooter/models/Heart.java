@@ -1,8 +1,10 @@
-package com.example.joacim.spaceshooter;
+package com.example.joacim.spaceshooter.models;
 
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+
+import com.example.joacim.spaceshooter.R;
 
 /**
  * Created by joacim on 2018-03-25.
