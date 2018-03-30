@@ -13,8 +13,6 @@ import android.widget.ImageButton;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private ImageButton buttonPlay, scoreButton;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,6 +20,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
+        ImageButton buttonPlay, scoreButton;
         buttonPlay = findViewById(R.id.buttonPlay);
         buttonPlay.setOnClickListener(this);
 
@@ -33,50 +32,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch(v.getId()) {
             case R.id.buttonPlay:
-                /*TODO
-                Change this from starting the game to go to level selector
-                The level selector should start the game with certain parameters
-                set so that the level becomes unique
-                Currently there is only one level.*/
-                startActivity(new Intent(this, GameActivity.class));
+                //Starts the level selection activity
+                startActivity(new Intent(this, LevelSelectorActivity.class));
                 break;
             case R.id.scoreButton:
-                //TODO
-                //Add score button
+                //Starts the highscore activity diesplaying the highscores
                 startActivity(new Intent(this, HighScore.class));
                 break;
         }
 
     }
 
-    @Override
-    public void onBackPressed() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage("Are you sure you want to exit?")
-                .setCancelable(false)
-                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-
-                        Intent startMain = new Intent(Intent.ACTION_MAIN);
-                        startMain.addCategory(Intent.CATEGORY_HOME);
-                        startMain.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                        startActivity(startMain);
-                        finish();
-                    }
-                })
-                .setNegativeButton("No", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        dialog.cancel();
-                    }
-                });
-        AlertDialog alert = builder.create();
-        alert.show();
-    }
-
-
-    /*Maybe use SQLite for more then just scores
-        Users, progress and more
-        Testing SQLite db commands*/
+    /**
+     * Maybe use SQLite for more then just scores
+     * Users, progress and more
+     * Testing SQLite db commands
+    */
     private void testDB() {
         //TODO
         //Implement SQLite db when creating player account

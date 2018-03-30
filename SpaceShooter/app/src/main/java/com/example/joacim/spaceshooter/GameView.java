@@ -51,13 +51,21 @@ class GameView extends SurfaceView implements Runnable {
     private SharedPreferences sharedPreferences;
 
 
-    public GameView(Context context) {
+    public GameView(Context context, int level) {
         super(context);
         this.context = context;
 
         //Initializing drawing objects
         surfaceHolder = getHolder();
         paint = new Paint();
+
+        /**
+         * TODO
+         * Add the level creation so
+         * that different levels can
+         * be used
+         */
+
 
         //Initialize player
         initPlayer();
