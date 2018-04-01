@@ -1,7 +1,5 @@
 package com.example.joacim.spaceshooter;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.database.Cursor;
@@ -20,12 +18,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
-        ImageButton buttonPlay, scoreButton;
+        ImageButton buttonPlay, scoreButton, dbButton;
         buttonPlay = findViewById(R.id.buttonPlay);
         buttonPlay.setOnClickListener(this);
 
         scoreButton = findViewById(R.id.scoreButton);
         scoreButton.setOnClickListener(this);
+
+        dbButton = findViewById(R.id.dbButton);
+        dbButton.setOnClickListener(this);
     }
 
     @Override
@@ -38,6 +39,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.scoreButton:
                 //Starts the highscore activity diesplaying the highscores
                 startActivity(new Intent(this, HighScore.class));
+                break;
+            case R.id.dbButton:
+                startActivity(new Intent(this, SignInOrRegister.class));
                 break;
         }
 

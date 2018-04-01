@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.GridView;
 import android.widget.AdapterView;
 
+import com.example.joacim.spaceshooter.game.GameActivity;
+
 
 /**
  * Created by joacim on 2018-03-30.
@@ -19,13 +21,9 @@ import android.widget.AdapterView;
 
 public class LevelSelectorActivity extends AppCompatActivity{
 
-    private Context context;
-
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_level_selector);
-
-        context = this;
 
         GridView gridview = findViewById(R.id.gridview);
         gridview.setAdapter(new ImageAdapter(this));
@@ -34,7 +32,7 @@ public class LevelSelectorActivity extends AppCompatActivity{
             public void onItemClick(AdapterView<?> parent, View v,
                                     int position, long id) {
                 position++;
-                Intent intent = new Intent(context, GameActivity.class);
+                Intent intent = new Intent(getApplicationContext(), GameActivity.class);
                 intent.putExtra("Level", position);
                 startActivity(intent);
             }

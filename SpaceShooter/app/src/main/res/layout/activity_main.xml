@@ -23,7 +23,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/buttonPlay"
+        android:layout_below="@id/buttonPlay"
+        android:background="@drawable/score_button" />
+
+    <ImageButton
+        android:id="@+id/dbButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/scoreButton"
         android:background="@drawable/score_button" />
 
 </RelativeLayout>
