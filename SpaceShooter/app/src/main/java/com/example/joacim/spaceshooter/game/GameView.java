@@ -12,7 +12,7 @@ import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
 import com.example.joacim.spaceshooter.Constants;
-import com.example.joacim.spaceshooter.MainActivity;
+import com.example.joacim.spaceshooter.Menu;
 import com.example.joacim.spaceshooter.R;
 import com.example.joacim.spaceshooter.game.models.Background;
 import com.example.joacim.spaceshooter.game.models.Boss;
@@ -283,7 +283,7 @@ class GameView extends SurfaceView implements Runnable {
             }
         } else {
             if(motionEvent.getAction()==MotionEvent.ACTION_DOWN){
-                Intent startMain = new Intent(context, MainActivity.class);
+                Intent startMain = new Intent(context, Menu.class);
                 startMain.addCategory(Intent.CATEGORY_LAUNCHER);
                 startMain.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 context.startActivity(startMain);

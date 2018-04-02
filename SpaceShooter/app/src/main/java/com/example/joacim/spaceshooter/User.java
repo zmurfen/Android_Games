@@ -1,10 +1,12 @@
 package com.example.joacim.spaceshooter;
 
+import java.io.Serializable;
+
 /**
  * Created by joacim on 2018-03-30.
  */
 
-public class User {
+public class User implements Serializable{
 
     private String name, password, email;
     private int id, level, gold;

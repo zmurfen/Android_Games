@@ -3,12 +3,14 @@ package com.example.joacim.spaceshooter.game;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
 
 import com.example.joacim.spaceshooter.Constants;
-import com.example.joacim.spaceshooter.MainActivity;
+import com.example.joacim.spaceshooter.Menu;
+import com.example.joacim.spaceshooter.User;
 
 
 /**
@@ -20,11 +22,14 @@ import com.example.joacim.spaceshooter.MainActivity;
 public class GameActivity extends AppCompatActivity {
 
     private GameView gameView;
+    private User user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         int level = getIntent().getIntExtra("Level", 0);
+
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
         DisplayMetrics display = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(display);
@@ -32,6 +37,7 @@ public class GameActivity extends AppCompatActivity {
         Constants.SCREEN_WIDTH = display.widthPixels;
         Constants.SCREEN_HEIGHT = display.heightPixels;
 
+        this.user = (User) getIntent().getSerializableExtra("User");
 
         //Initializing game view object
         gameView = new GameView(this, level);
@@ -63,7 +69,7 @@ public class GameActivity extends AppCompatActivity {
                 .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
 
-                        Intent startMain = new Intent(getApplicationContext(), MainActivity.class);
+                        Intent startMain = new Intent(getApplicationContext(), Menu.class);
                         startMain.addCategory(Intent.CATEGORY_LAUNCHER);
                         startMain.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                         startActivity(startMain);
@@ -78,5 +84,10 @@ public class GameActivity extends AppCompatActivity {
                 });
         AlertDialog alert = builder.create();
         alert.show();
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
     }
 }

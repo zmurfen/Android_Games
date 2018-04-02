@@ -6,6 +6,7 @@
     android:id="@+id/activity_high_score"
     android:gravity="center_horizontal"
     android:orientation="vertical"
+    android:screenOrientation="landscape"
     tools:context="com.example.joacim.spaceshooter.HighScore">
 
     <TextView

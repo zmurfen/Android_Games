@@ -24,7 +24,7 @@
         <activity android:name=".game.GameActivity" />
         <activity android:name=".HighScore" />
         <activity android:name=".LevelSelectorActivity" />
-        <activity android:name=".SignInOrRegister" />
+        <activity android:name=".Menu"/>
     </application>
 
 </manifest>
