@@ -89,5 +89,8 @@ public class GameActivity extends AppCompatActivity {
     @Override
     public void onStop() {
         super.onStop();
+        //Update user
+        //Save to database
+        //close database
     }
 }

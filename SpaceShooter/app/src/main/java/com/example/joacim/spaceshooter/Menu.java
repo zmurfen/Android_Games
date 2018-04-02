@@ -51,7 +51,6 @@ public class Menu extends AppCompatActivity implements View.OnClickListener {
                 .setCancelable(false)
                 .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        user = null;
                         Intent startMain = new Intent(getApplicationContext(), MainActivity.class);
                         startMain.addCategory(Intent.CATEGORY_LAUNCHER);
                         startMain.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
@@ -66,5 +65,13 @@ public class Menu extends AppCompatActivity implements View.OnClickListener {
                 });
         AlertDialog alert = builder.create();
         alert.show();
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        //Update user
+        //Save to darabase
+        //close database
     }
 }
